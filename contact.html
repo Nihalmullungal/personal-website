@@ -59,7 +59,7 @@
       <div class="container py-lg-3">
         <div class="top-map">
           <div class="map-content-9">
-            <form id="gform" action="https://script.google.com/macros/s/AKfycbwwymDEpC5E4P_EM1_JPkdiFyjBsrfY3Pfe4p8TdcX2Yf6CwdX3lyD0YXGOZRh2fV_l/exec" method="post">
+            <form id="submit-form" action="">
               <div class="form-top1">
                 <h3 class="hny-title text-center mb-0">CONTACT</h3>
                 <p class="mb-lg-5 mb-4 text-center">Interested in working together? Please let me know.</p>
@@ -88,24 +88,23 @@
 
   </section>
   <!-- //contact-form -->
-  <script>
-    $("#submit-form").submit((e)=>{
-        e.preventDefault()
-        $.ajax({
-            url:"https://script.google.com/macros/s/AKfycbxJSrKfsNJ0fyYgIpMOt8byseajIDXDjmyaVCG5gw8e97TsB9ids95dfHunBBQsTsSKqw/exec",
-            data:$("#submit-form").serialize(),
-            method:"post",
-            success:function (response){
-                alert("Form submitted successfully")
-                // window.location.reload()
-                window.location.href="index.html"
-            },
-            error:function (err){
-                alert("Something Error")
-
-            }
-        })
-    })
+<script>
+  $("#submit-form").submit((e)=>{
+      e.preventDefault()
+      $.ajax({
+          url:"https://script.google.com/macros/s/AKfycbwwymDEpC5E4P_EM1_JPkdiFyjBsrfY3Pfe4p8TdcX2Yf6CwdX3lyD0YXGOZRh2fV_l/exec",
+          data:$("#submit-form").serialize(),
+          method:"post",
+          success:function (response){
+              alert("Form submitted successfully")
+              window.location.reload()
+              //window.location.href="https://google.com"
+          },
+          error:function (err){
+              alert("Something Error")
+          }
+      })
+  })
 </script>
 </body>
 
